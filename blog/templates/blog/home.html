@@ -1,0 +1,12 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    {% for stud in stds %}
+        <h3><b>Name:</b>{{ stud.stud_name }}</h3>
+        <h4><strong>Class:<strong> {{ stud.class }}</h4>
+        <h5>School : {{ stud.school }}</h5>
+        <hr>
+    {% endfor %}
+{% endblock content %}
+
+
