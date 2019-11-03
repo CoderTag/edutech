@@ -13,75 +13,78 @@
 </head>
 
 <body>
-    <!-- Begin of Sidebar -->
-    <div class="wrapper d-flex">
-        <!-- Sidebar -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
-            </div>
     
-            <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    
-        <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-        
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-        
+    <div class="d-flex align-items-stretch">
+            <!-- Begin of Sidebar -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>CrickLink</h3>
+                    <strong>CL</strong>
                 </div>
-            </nav>
-        </div>
-
-    </div>
-    <!-- ENd of SideBar -->
     
-    <div class="container mt-5">
-        {% block content %} {% endblock content %}
-    </div>         
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="{% url 'blog-home' %}" class="sidebar_anchor">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>                        
+                    </li>
+                    <li style="background-color: #5269CB;">
+                        <a href="{% url 'blog-about' %}" class="sidebar_anchor">
+                            <i class="fas fa-briefcase"></i>
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar_anchor">
+                            <i class="fas fa-copy"></i>
+                            Pages
+                        </a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#" class="sidebar_anchor">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar_anchor">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#" class="sidebar_anchor">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="background-color: #5269CB;">
+                        <a href="#" class="sidebar_anchor">
+                            <i class="fas fa-image"></i>
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar_anchor">
+                            <i class="fas fa-question"></i>
+                            FAQ
+                        </a>
+                    </li>
+                    <li style="background-color: #5269CB;">
+                        <a href="#" class="sidebar_anchor">
+                            <i class="fas fa-paper-plane"></i>
+                            Contact
+                        </a>
+                    </li>
+                </ul> 
+            </nav>
+            <!-- ENd of SideBar -->
+
+            <!-- Page Content  -->
+            <div id="content">
+                <button type="button" class="btn btn-light sidebarCollapse align-self-sm-auto" style="color: slategray;">
+                    <i class="fas fa-hamburger fa-2x text-secondary"></i>
+                </button> 
+
+                <div class="container-fluid sidebarCollapse mt-5">
+                        {% block content %} {% endblock content %}
+                </div>
+            </div>
+        </div>
     
     
 
