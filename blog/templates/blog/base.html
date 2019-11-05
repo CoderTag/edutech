@@ -18,21 +18,35 @@
             <!-- Begin of Sidebar -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>CrickLink</h3>
-                    <strong>CL</strong>
+                    <!-- <a class="navbar-brand" href="#">
+                        <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Bootstrap
+                    </a>     -->
+                    <a href="{% url 'blog-home' %}" class="navbar-brand">
+                        <h3>Crick Link</h3>
+                        <strong>CL</strong>
+                    </a>
                 </div>
     
                 <ul class="list-unstyled components">
                     <li>
                         <a href="{% url 'blog-home' %}" class="sidebar_anchor">
-                            <i class="fas fa-home"></i>
+                            <div class="d-flex">
+                                <div class="mx-1"><i class="fas fa-home fa-2x"></i></div>
+                                <div class="mx-1 align-self-center sidebar-menu">Home</div>
+                            </div>
+                        </a>
+                        <!-- <a href="{% url 'blog-home' %}" class="sidebar_anchor">
+                            <i class="h4 fas fa-home"></i>
                             Home
-                        </a>                        
+                        </a>                         -->
                     </li>
-                    <li style="background-color: #5269CB;">
+                    <li>
                         <a href="{% url 'blog-about' %}" class="sidebar_anchor">
-                            <i class="fas fa-briefcase"></i>
-                            About
+                            <div class="d-flex">
+                                <div class="mx-1"><i class="fas fa-briefcase fa-2x"></i></div>
+                                <div class="mx-1 align-self-center sidebar-menu">About</div>
+                            </div>
                         </a>
                     </li>
                     <li>
@@ -52,7 +66,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li style="background-color: #5269CB;">
+                    <li>
                         <a href="#" class="sidebar_anchor">
                             <i class="fas fa-image"></i>
                             Portfolio
@@ -64,10 +78,10 @@
                             FAQ
                         </a>
                     </li>
-                    <li style="background-color: #5269CB;">
+                    <li>
                         <a href="#" class="sidebar_anchor">
                             <i class="fas fa-paper-plane"></i>
-                            Contact
+                            Contact <span class="badge-info">new</span>
                         </a>
                     </li>
                 </ul> 
@@ -75,12 +89,12 @@
             <!-- ENd of SideBar -->
 
             <!-- Page Content  -->
-            <div id="content">
-                <button type="button" class="btn btn-light sidebarCollapse align-self-sm-auto" style="color: slategray;">
-                    <i class="fas fa-hamburger fa-2x text-secondary"></i>
+            <div id="content" class="sidebarCollapse">
+                <button type="button" class="btn btn-light float-right sidebarCollapse2 d-block d-sm-block d-md-none" style="background: linear-gradient(to bottom right, #0099ff 0%, #0000ff 100%);">
+                    <i class="fas fa-hamburger fa-3x text-light"></i>
                 </button> 
 
-                <div class="container-fluid sidebarCollapse mt-5">
+                <div class="container-fluid mt-5">
                         {% block content %} {% endblock content %}
                 </div>
             </div>
@@ -93,6 +107,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="{% static 'blog/js/sidebar.js' %}" type="text/javascript"></script>
 <script src="{% static 'blog/js/all.js' %}" type="text/javascript"></script>
-
 </body>
 </html>

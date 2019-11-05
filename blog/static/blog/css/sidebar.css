@@ -3,6 +3,7 @@
 */
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Lato|Pacifico|Righteous|Roboto+Condensed|Ubuntu&display=swap');
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -50,7 +51,8 @@ span {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background: linear-gradient(to bottom right, #0099ff 0%, #0000ff 100%);
+    /* background: #7386D5; */
     color: #fff;
     transition: all 0.3s;
     
@@ -67,8 +69,13 @@ span {
 }
 
 #sidebar.active .sidebar-header h3,
+#sidebar.active .sidebar-menu,
 #sidebar.active .CTAs {
     display: none;
+}
+
+.sidebar-menu{
+    display: inline;
 }
 
 #sidebar.active .sidebar-header strong {
@@ -107,7 +114,8 @@ span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: linear-gradient(to bottom right, #0099ff 0%, #0000ff 100%);
+    font-family: 'Pacifico';
 }
 
 #sidebar .sidebar-header strong {
@@ -156,7 +164,7 @@ a.sidebar_anchor[data-toggle="collapse"] {
 ul ul a.sidebar_anchor {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: linear-gradient(to bottom right, #0099ff 0%, #0000ff 100%);
 }
 
 ul.CTAs {
@@ -211,10 +219,13 @@ ul.CTAs a.sidebar_anchor {
     }
 
     #sidebar {
-        min-width: 80px;
-        max-width: 80px;
+        min-width: 50%;
+        max-width: 50%;
         text-align: center;
-        margin-left: -80px !important;
+        /* margin-left: -80px !important; */
+        margin-left: -50% !important;
+        z-index: 999;
+        /* display: none; */
     }
     .dropdown-toggle::after {
         top: auto;
@@ -225,9 +236,16 @@ ul.CTAs a.sidebar_anchor {
         transform: translateX(50%);
     }
     #sidebar.active {
-        margin-left: 0 !important;
-        z-index: 999;
+        min-width: 50%; 
+        max-width: 50%;  
+        margin-left: 0% !important;
+        /* margin-left: 0 !important; */
+        /* z-index: 999; */
     }
+    #sidebar.active .sidebar-menu {
+        display: inline !important;
+    }
+
     #sidebar .sidebar-header h3,
     #sidebar .CTAs {
         display: none;
@@ -236,7 +254,8 @@ ul.CTAs a.sidebar_anchor {
         display: block;
     }
     #sidebar ul li a {
-        padding: 20px 10px;
+        /* padding: 20px 10px; */
+        padding: 0px;
     }
     #sidebar ul li a span {
         font-size: 0.85em;
@@ -253,9 +272,5 @@ ul.CTAs a.sidebar_anchor {
     }
     #sidebar {
         margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
-   
+    }   
 }
