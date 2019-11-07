@@ -20,7 +20,7 @@ font-family: 'Ubuntu', sans-serif; */
     background-image: url("../img/pencils.JPG");
     background-size: cover;
     background-attachment: fixed;
-    
+    margin: -15px;
 }
 
 .site-title, .site-desc{
@@ -29,7 +29,7 @@ font-family: 'Ubuntu', sans-serif; */
 }
 
 .site-title{
-    margin-top: 10%;
+    margin-top: 0%;
     margin-bottom: 6%;
     font-size: 50px;
     padding: 10%;
@@ -41,7 +41,7 @@ font-family: 'Ubuntu', sans-serif; */
 }
 
 .site-btn1{
-    margin-left: 20%;
+    /* margin-left: 20%; */
     background-color: black;
     color: white;
 }
