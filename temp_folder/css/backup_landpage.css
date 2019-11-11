@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Pacifico|Righteous|Roboto+Condensed|Ubuntu|Muli:900,900i&display=swap');
+
+/* Specify in CSS
+Use the following CSS rules to specify these families:
+
+font-family: 'Pacifico', cursive;
+font-family: 'Lato', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+
+body{
+    font-family: 'Trebuchet MS';
+    width: 100%;
+    padding-right: 0%;
+
+}
+body
+#topnavbar{
+    padding:5px;
+    background: linear-gradient(to bottom right, #0099ff 0%, #0000ff 100%);
+}
+main{
+    width: 100%;
+}
+
+.site-content{
+    background-image: url("../img/pencils.JPG");
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+}
+
+.site-title, .site-desc{
+    color: white;
+}
+
+.site-title{
+    margin-top: 0%;
+    margin-bottom: 1%;
+    font-size: 40px;
+    padding: 5%;
+}
+
+.site-desc{
+    font-size: 20px;
+    padding-left: 10%;
+}
+
+.site-btn1{
+    /* margin-left: 20%; */
+    background-color: black;
+    color: white;
+}
+
+.site-btn2{
+    background-color: white;
+}
+
+.site-btn1,.site-btn2{
+    margin-top: 5%;
+    margin-bottom: 14px;
+}
+.desc-1{
+    font-size: 20px;
+}
+.card-1{
+    width: 20rem;
+}
+.footer{
+    bottom: 0;
+    left:10px;
+    min-height: 80vh;
+    justify-content: center;
+    background-color: #333 !important;  
+    padding-right: 0px;
+    margin-right: 0px;
+    width: 101%;
+    background-size: cover !important;  
+}
+.footer .ftsec p{
+    font-family: 'Muli';
+    margin-left: 10px !important;
+    margin-top: 40px;
+    font-weight: 900;
+    font-size: 15px;
+}
+.footer .ftsec p.space{
+    padding-left: 80px;
+}
+.footer a{
+    font-size: 15px;
+    color: #fff;
+    margin-left:10px;
+    margin-bottom: 10px;
+}
+.social-media{
+    width: 100%;
+}
+main{
+    width:100%
+}
+
+.social-media .navig{
+    color: antiquewhite;
+}
+.ftsec{
+    padding-top: 40px;
+}
+@media(max-width:768px){
+    .social-media a{
+        display: block;
+        width: 100%;
+    }
+}
