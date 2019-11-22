@@ -1,7 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% if title %}
         <title>{{ title }}</title>
     {% else %}
@@ -9,97 +12,125 @@
     {% endif %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'blog/css/landpage.css' %}"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/sidebar.css' %}">
 </head>
 
 <body>
     
     <div class="d-flex align-items-stretch">
-            <!-- Begin of Sidebar -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <!-- <a class="navbar-brand" href="#">
-                        <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-                    Bootstrap
-                    </a>     -->
-                    <a href="{% url 'blog-home' %}" class="navbar-brand">
-                        <h3>Crick Link</h3>
-                        <strong>CL</strong>
+        <!-- Begin of Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <!-- <a class="navbar-brand" href="#">
+                    <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                Bootstrap
+                </a>     -->
+                <a href="{% url 'blog-home' %}" class="navbar-brand">
+                    <h3>Crick Link</h3>
+                    <strong>CL</strong>
+                </a>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="{% url 'blog-home' %}" class="sidebar_anchor">
+                        <div class="d-flex">
+                            <div class="mx-1"><i class="fas fa-home fa-2x"></i></div>
+                            <div class="mx-3 align-self-center sidebar-menu">Home</div>
+                        </div>
                     </a>
-                </div>
-    
-                <ul class="list-unstyled components">
-                    <li>
-                        <a href="{% url 'blog-home' %}" class="sidebar_anchor">
-                            <div class="d-flex">
-                                <div class="mx-1"><i class="fas fa-home fa-2x"></i></div>
-                                <div class="mx-1 align-self-center sidebar-menu">Home</div>
-                            </div>
-                        </a>
-                        <!-- <a href="{% url 'blog-home' %}" class="sidebar_anchor">
-                            <i class="h4 fas fa-home"></i>
-                            Home
-                        </a>                         -->
-                    </li>
-                    <li>
-                        <a href="{% url 'blog-about' %}" class="sidebar_anchor">
-                            <div class="d-flex">
-                                <div class="mx-1"><i class="fas fa-briefcase fa-2x"></i></div>
-                                <div class="mx-1 align-self-center sidebar-menu">About</div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar_anchor">
-                            <i class="fas fa-copy"></i>
-                            Pages
-                        </a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#" class="sidebar_anchor">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="sidebar_anchor">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#" class="sidebar_anchor">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" class="sidebar_anchor">
-                            <i class="fas fa-image"></i>
-                            Portfolio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="sidebar_anchor">
-                            <i class="fas fa-question"></i>
-                            FAQ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="sidebar_anchor">
-                            <i class="fas fa-paper-plane"></i>
-                            Contact <span class="badge-info">new</span>
-                        </a>
-                    </li>
-                </ul> 
-            </nav>
-            <!-- ENd of SideBar -->
+                    <!-- <a href="{% url 'blog-home' %}" class="sidebar_anchor">
+                        <i class="h4 fas fa-home"></i>
+                        Home
+                    </a>                         -->
+                </li>
+                <li>
+                    <a href="{% url 'blog-about' %}" class="sidebar_anchor">
+                        <div class="d-flex">
+                            <div class="mx-1"><i class="fas fa-briefcase fa-2x"></i></div>
+                            <div class="mx-3 align-self-center sidebar-menu">About</div>
+                        </div>
+                    </a>
+                </li>
+                
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'profile' %}" class="sidebar_anchor">
+                        <div class="d-flex">
+                            <div class="mx-1"><i class="fas fa-user fa-2x"></i></div>
+                            <div class="mx-3 align-self-center sidebar-menu">Profile</div>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="{% url 'logout' %}" class="sidebar_anchor">
+                        <div class="d-flex">
+                            <div class="mx-1"><i class="fas fa-sign-out-alt fa-2x"></i></div>
+                            <div class="mx-3 align-self-center sidebar-menu">Sign Out</div>
+                        </div>
+                    </a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'register' %}" class="sidebar_anchor">
+                        <div class="d-flex">
+                            <div class="mx-1"><i class="fas fa-user-plus fa-2x"></i></div>
+                            <div class="mx-3 align-self-center sidebar-menu">Sign Up</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}" class="sidebar_anchor">
+                        <div class="d-flex">
+                            <div class="mx-1"><i class="fas fa-sign-in-alt fa-2x"></i></div>
+                            <div class="mx-3 align-self-center sidebar-menu">Sign In</div>
+                        </div>
+                    </a>
+                </li>
+                {% endif %}
+            
 
-            <!-- Page Content  -->
-            <div id="content" class="sidebarCollapse">
-                <button type="button" class="btn btn-light float-right sidebarCollapse2 d-block d-sm-block d-md-none" style="background: linear-gradient(to bottom right, #0099ff 0%, #0000ff 100%);">
-                    <i class="fas fa-hamburger fa-3x text-light"></i>
-                </button> 
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle sidebar_anchor">
+                        <i class="fas fa-copy"></i>
+                        Pages
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#" class="sidebar_anchor">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar_anchor">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#" class="sidebar_anchor">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul> 
+        </nav>
+        <!-- ENd of SideBar -->
 
-                <div class="container-fluid mt-5">
-                        {% block content %} {% endblock content %}
-                </div>
+        <!-- Page Content  -->
+        <div id="content" class="sidebarCollapse">
+            <button type="button" class="btn btn-light float-right sidebarCollapse2 d-block d-sm-block d-md-none" style="background: linear-gradient(to bottom right, #0099ff 0%, #0000ff 100%);">
+                <i class="fas fa-hamburger fa-3x text-light"></i>
+            </button> 
+
+            <div class="container-fluid mt-5">
+                {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                {% endif %}
+                {% block content %} {% endblock content %}
             </div>
         </div>
-    
+    </div>    
     
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Pacifico|Righteous|Roboto+Condensed|Ubuntu|Muli:900,900i&display=swap');
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Muli','Roboto Condensed','Trebuchet MS';
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.25em !important;
+    font-weight: bold;
+}
+#top{
+    background: linear-gradient(to right,#a517ba,#5f1782);
+    overflow: hidden;
+}
+#navbar{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: linear-gradient(to right,#a517ba,#5f1782);
+    padding: 0 !important;
+}
+.navbar-nav li{
+    padding: 0px 10px;
+}
+.navbar-nav a{
+    color:#fff !important;
+}
+#banner{
+    background: linear-gradient(to right,#a517ba,#5f1782);
+    color: #fff;
+    margin-top: 5%;
+}
+.promo-title{
+    margin-top: 60px;
+    font-size: 40px;
+    font-weight: 600;
+}
+#banner img{
+    width:100%;
+}
+.services h4{
+    padding: 5px;
+    margin-top:25px;
+}
+.title::before{
+    content: '';
+    background:#a517ba;
+    display: block;
+    width: 200px;
+    margin-right: auto;
+    height: 5px;
+    margin-left: auto;
+    transform: translateY(90px);
+    margin-bottom: 40px;
+}
+.title{
+    margin-bottom: 40px;
+}
+.services a{
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 25px;
+    background:linear-gradient(to right,#a517ba,#5f1782);
+
+}
+#testimonials{
+    padding: 5%;
+    background-color:#ffd300;
+}
+.testimonials{
+    border-left: 4px solid #a517ba;
+}
+.testimonials img{
+    border-radius: 50%;
+    height: 6em;
+    width:6em;
+    margin: 0 10px;
+}
+.testimonials-2 img{
+    border-radius: 50%;
+    height: 45px;
+    width:60px;
+    margin: 0 10px;
+}
+.footer{
+    background: #333;
+}
+.footer a{
+    margin-left: 0px;
+    color:antiquewhite
+}
+#about{
+    background: #0099ff;
+}
+#about li,h2,h1{
+    color: #fff;
+}
+#about h4{
+    padding-bottom: 10px;
+}
+#about li{
+    padding: 0.25em;
+}
+a:hover{
+    text-decoration: none  !important;
+    color: burlywood !important;
+}
